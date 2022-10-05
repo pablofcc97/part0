@@ -1,0 +1,17 @@
+note over browser:
+User write a new note and click the save button
+end note
+browser->server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over server:
+Server add the post content to a new array
+HTTP 302 state code
+Redirect to https://studies.cs.helsinki.fi/exampleapp/notes
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "Page manipulation from the console is easy", date: "2022-09-23T05:59:38.101Z" }, ...]

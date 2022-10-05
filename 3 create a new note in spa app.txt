@@ -1,0 +1,15 @@
+note over browser:
+User add a new note and click the save button
+end note
+browser->server:HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+content-type header is json app
+end note
+note over server:
+Server add the post content to a new array
+HTTP 201 state code
+no redirection
+end note
+note over browser:
+browser execute spa.js to render the new note
+end note
